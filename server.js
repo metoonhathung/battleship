@@ -17,6 +17,8 @@ server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 const connections = [null, null];
 
 io.on('connection', socket => {
+  // console.log('New WS Connection')
+
   // Find an available player number
   let playerIndex = -1;
   for (const i in connections) {
@@ -41,9 +43,9 @@ io.on('connection', socket => {
 
   // Handle Disconnect
   socket.on('disconnect', () => {
-    console.log(`Player ${playerIndex} disconnected`);
+    console.log(`Player ${playerIndex} has disconnected`);
     connections[playerIndex] = null;
-    //Tell everyone what player number just disconnected
+    // Tell everyone what player number just disconnected
     socket.broadcast.emit('player-connection', playerIndex);
   });
 
@@ -72,7 +74,7 @@ io.on('connection', socket => {
 
   // on Fire Reply
   socket.on('fire-reply', square => {
-    console.log(square);
+    console.log('square', square);
 
     // Forward the reply to the other player
     socket.broadcast.emit('fire-reply', square);

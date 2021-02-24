@@ -1,171 +1,235 @@
-.container {
-  display: flex;
+body {
+  margin: 0;
+  background-color: white;
+  overflow-x: hidden;
 }
 
-.grid-user {
-  width: 400px;
-  height: 400px;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: blue;
-  margin: 20px;
-}
-
-.grid div {
-  width: 40px;
-  height: 40px;
-  border: 1px solid white;
+*,
+*::before,
+*::after {
+  font-family: "Play", sans-serif;
   box-sizing: border-box;
 }
 
-.grid-computer {
-  width: 400px;
-  height: 400px;
+.link-container {
   display: flex;
-  flex-wrap: wrap;
-  background-color: lightgreen;
-  margin: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 34vh;
+}
+
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 66vh;
+}
+
+.splash-title {
+  font-family: "Black Ops One", cursive;
+  font-size: 10rem;
+}
+
+.splash-battleship-image {
+  position: absolute;
+  right: 20%;
+  top: 20%;
+  width: 60%;
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.btn {
+  font-size: inherit;
+  background-color: mediumspringgreen;
+  padding: 0.5em 1em;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0.2em;
+  color: #333;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: springgreen;
+}
+
+.splash-btn {
+  font-size: 2rem;
+  margin-left: 2rem;
+}
+
+.splash-btn:first-child {
+  margin-left: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.battleship-grid {
+  margin: 1vmin;
+  display: grid;
+  background-color: dodgerblue;
+  grid-template-rows: repeat(10, 4.8vmin);
+  grid-template-columns: repeat(10, 4.8vmin);
+}
+
+.grid-computer > .taken,
+.grid-computer > .boom {
+  background-color: dodgerblue !important;
+  border-radius: 0 !important;
+}
+
+.taken,
+.ship {
+  position: relative;
+  background-color: lightgray;
+}
+
+.taken.start.vertical {
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.taken.end.vertical {
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.taken.start.horizontal {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.taken.end.horizontal {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
 }
 
 .grid-display {
-  width: 400px;
-  height: 400px;
-  margin: 20px;
-  background-color: yellow;
+  display: flex;
+}
+
+.ship > div {
+  width: 4.8vmin;
+  height: 4.8vmin;
+}
+
+.ship {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1vmin;
+  width: calc(4.8vmin * var(--width, 1));
+  height: calc(4.8vmin * var(--height, 1));
+  border-radius: 2.3vmin;
+}
+
+.battleship-grid > div,
+.ship > div {
+  border: 1px solid #ffffff33;
 }
 
 .destroyer-container {
-  width: 80px;
-  height: 40px;
-  background-color: orange;
-  margin: 10px;
-  display: flex;
+  --width: 2;
 }
+
 .destroyer-container-vertical {
-  width: 40px;
-  height: 80px;
-  background-color: orange;
-  margin: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  --height: 2;
+  --width: 1;
 }
 
-.submarine-container {
-  width: 120px;
-  height: 40px;
-  background-color: pink;
-  margin: 10px;
-  display: flex;
-}
-
-.submarine-container-vertical {
-  width: 40px;
-  height: 120px;
-  background-color: pink;
-  margin: 10px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
+.submarine-container,
 .cruiser-container {
-  width: 120px;
-  height: 40px;
-  background-color: purple;
-  margin: 10px;
-  display: flex;
+  --width: 3;
 }
 
+.submarine-container-vertical,
 .cruiser-container-vertical {
-  width: 40px;
-  height: 120px;
-  background-color: purple;
-  margin: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  --height: 3;
+  --width: 1;
 }
 
 .battleship-container {
-  width: 160px;
-  height: 40px;
-  background-color: aqua;
-  margin: 10px;
-  display: flex;
+  --width: 4;
 }
 
 .battleship-container-vertical {
-  width: 40px;
-  height: 160px;
-  background-color: aqua;
-  margin: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  --height: 4;
+  --width: 1;
 }
 
 .carrier-container {
-  width: 200px;
-  height: 40px;
-  background-color: green;
-  margin: 10px;
-  display: flex;
+  --width: 5;
 }
 
 .carrier-container-vertical {
-  width: 40px;
-  height: 200px;
-  background-color: green;
-  margin: 10px;
-  display: flex;
-  flex-wrap: wrap;
+  --height: 5;
+  --width: 1;
 }
 
-.ship div {
-  width: 40px;
-  height: 40px;
-  border: 1px solid white;
-  box-sizing: border-box;
+.hidden-info {
+  font-size: 1.5rem;
+  align-items: center;
+  flex-direction: column;
 }
 
-.destroyer {
-  background-color: orange;
+.info-text {
+  margin: 1rem;
 }
 
-.submarine {
-  background-color: pink;
-}
-
-.cruiser {
-  background-color: purple;
-}
-
-.battleship {
-  background-color: aqua;
-}
-
-.carrier {
-  background-color: green;
-}
-
+.miss,
 .boom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boom::after,
+.miss::after {
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+  width: 2vmin;
+  height: 2vmin;
+}
+
+.miss::after {
+  background-color: white;
+}
+
+.boom::after {
   background-color: red;
 }
 
-.miss {
-  background-color: black;
+.player {
+  margin: 2vmin;
 }
 
 .connected,
 .ready {
   font-weight: normal;
+  opacity: 0.25;
+  text-decoration: line-through;
 }
 
-.connected span,
-.ready span {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  background: red;
+.connected.active,
+.ready.active {
+  opacity: 1;
+  text-decoration: none;
 }
 
-span.green {
-  background: green;
+span {
+  font-size: 8px;
+  text-align: center;
+  display: none;
+}
+
+.buttons {
+  display: flex;
 }

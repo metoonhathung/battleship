@@ -1,23 +1,23 @@
 {
-  "name": "merge",
+  "homepage": "https://github.com/metoonhathung/battleship",
+  "name": "battleship",
   "version": "1.0.0",
   "description": "Multiplayer Battleship Game",
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "dev": "nodemon server"
+    "develop": "nodemon server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/metoonhathung/battleship.git"
+    "url": "https://github.com/metoonhathung/battleship.git"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/metoonhathung/battleship/issues"
   },
-  "homepage": "https://github.com/metoonhathung/battleship#readme",
   "dependencies": {
     "express": "^4.17.1",
     "socket.io": "^3.1.1"
