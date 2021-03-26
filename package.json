@@ -1,23 +1,22 @@
 {
-  "homepage": "https://github.com/metoonhathung/battleship",
   "name": "battleship",
   "version": "1.0.0",
-  "description": "Multiplayer Battleship Game",
+  "description": "Battleship",
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "develop": "nodemon server"
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/metoonhathung/battleship.git"
+    "url": "git+https://github.com/metoonhathung/battleship.git"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Hung Tran",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/metoonhathung/battleship/issues"
   },
+  "homepage": "https://github.com/metoonhathung/battleship#readme",
   "dependencies": {
     "express": "^4.17.1",
     "socket.io": "^3.1.1"

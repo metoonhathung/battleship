@@ -1,18 +1,7 @@
-# Multiplayer Battleship
+# Battleship
 
-https://multiplayer-battleship.herokuapp.com/
+https://metoonhathung-battleship.herokuapp.com/
 
-Description: A web application to play Battleship game with two options: Single player (with AI algorithm using probability distribution and DFS) and Multiplayer (between 2 people).
+Description: A web application to play Battleship game with two options: Single player (versus Computer with AI algorithm using probability distribution) and Multiplayer (between 2 people).
 
-Technologies: JavasScript, HTML, CSS, Node.js, Express, Socket.io
-
-### To run the code locally:
-
-```
-git clone https://github.com/metoonhathung/battleship.git
-cd battleship
-npm i
-npm run develop
-```
-
-The website will be on `http://localhost:3000/`
+Technologies: Node.js, Express, Socket.io, JavasScript, HTML, CSS

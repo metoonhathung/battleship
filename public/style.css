@@ -80,6 +80,7 @@ body {
   grid-template-columns: repeat(10, 4.8vmin);
 }
 
+  /* debug */
 .grid-computer > .taken,
 .grid-computer > .boom {
   background-color: dodgerblue !important;
@@ -224,9 +225,10 @@ body {
   text-decoration: none;
 }
 
-span {
-  font-size: 8px;
+.debug {
+  font-size: 4px;
   text-align: center;
+  /* z-index: 100; */
   display: none;
 }
 
