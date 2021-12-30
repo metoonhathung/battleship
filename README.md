@@ -1,7 +1,7 @@
 # Battleship
 
-https://metoonhathung-battleship.herokuapp.com/
+[Demo](https://battleship-d171.onrender.com/)
 
-Description: A web application to play Battleship game with two options: Single player (versus Computer with AI algorithm using probability distribution) and Multiplayer (between 2 people).
+Description: A web application to play Battleship game. Single player (probability distribution AI) or Multiplayer.
 
-Technologies: Node.js, Express, Socket.io, JavasScript, HTML, CSS
+Technologies: Node.js, Express, Socket.io, JavaScript, HTML, CSS
